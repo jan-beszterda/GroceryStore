@@ -13,6 +13,7 @@ public class Client extends Person{
     super(name);
     this.age = age;
     this.shoppingList = new ShoppingListImpl();
+    this.receipts = new ArrayList<>();
     this.bag = new HashMap<>();
   }
 
@@ -26,5 +27,9 @@ public class Client extends Person{
 
   public HashMap<String, Integer> getBag() {
     return bag;
+  }
+
+  public ArrayList<Receipt> getReceipts() {
+    return receipts;
   }
 }

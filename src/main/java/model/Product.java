@@ -7,6 +7,11 @@ public class Product {
   private String expiryDate;
   private double price;
   private boolean isFridgeProduct;
+
+  public boolean isFridgeProduct() {
+    return isFridgeProduct;
+  }
+
   private boolean isRestrictedProduct = false;
 
   public Product() {}

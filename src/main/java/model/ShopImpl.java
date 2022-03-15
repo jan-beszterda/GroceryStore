@@ -11,6 +11,27 @@ public class ShopImpl implements Shop {
   private String address;
   private HashMap<String, Product> productNames;
   private HashMap<String, Integer> productStock;
+
+  public String getName() {
+    return name;
+  }
+
+  public String getAddress() {
+    return address;
+  }
+
+  public HashMap<String, Product> getProductNames() {
+    return productNames;
+  }
+
+  public HashMap<String, Integer> getProductStock() {
+    return productStock;
+  }
+
+  public ArrayList<Person> getEmployees() {
+    return employees;
+  }
+
   private ArrayList<Person> employees;
 
   public ShopImpl(String name, String address) {
@@ -91,6 +112,7 @@ public class ShopImpl implements Shop {
     receipt.getInfo().add("Thank you for shopping!");
     receipt.getInfo().add("-".repeat(10));
     printReceipt(receipt);
+    client.getReceipts().add(receipt);
     employee.setAvailable(true);
   }
 
