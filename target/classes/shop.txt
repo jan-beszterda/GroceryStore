@@ -1,4 +1,0 @@
-Big Groceries,5th Avenue 46523 NY
-Banana,Fresh Fruit Co.,Organic Bananas from Costa Rica,Fruit,N/A,2.49,false
-Milk,Arla,Organic Full fat,Dairy,,5.95,true
-Snus,Ettan,A box of portioned snus,Tobacco,,5.45,true
