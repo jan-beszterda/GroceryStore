@@ -26,16 +26,6 @@ public class Main {
   Skapa upp ett kvitto som är baserat på om varan fanns eller inte Om kunden inte fick allting på sin inköpslista så ska det alltså inte finnas med på kvittot. Vad kan ett kvitto innehålla?*/
 
   public static void main(String[] args) {
-    ShopImplementation shop = ShopInitializer.initialiseShop();
-    /*System.out.println(shop.getName() + ", " + shop.getAddress());
-    System.out.println(shop.getProductNames().size());
-    shop.getProductNames().values().forEach(value -> {
-      System.out.println(value);
-    });*/
-    Dialogs.displayWelcomeMessage();
-
-    //Client client = shopInitializer.initialiseClient();
-
-    //shop.sell(client, shop.getAvailableEmployee());
+    new App();
   }
 }
