@@ -1,9 +1,13 @@
 package model;
 
+import java.text.DateFormat;
+import java.text.FieldPosition;
+import java.text.ParsePosition;
 import java.time.Instant;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.Locale;
 
 public class ShopImplementation implements Shop {
 
@@ -19,10 +23,6 @@ public class ShopImplementation implements Shop {
     this.productNames = new HashMap<>();
     this.productStock = new HashMap<>();
     this.employees = new ArrayList<>();
-  }
-
-  public void start() {
-
   }
 
   @Override
@@ -55,9 +55,8 @@ public class ShopImplementation implements Shop {
     receipt.getInfo().add("-".repeat(10));
     receipt.getInfo().add(this.name);
     receipt.getInfo().add(this.address);
-    receipt.getInfo().add(String.valueOf(Date.from(Instant.now())));
-    receipt.getInfo().add(employee.getId());
-    receipt.getInfo().add(employee.getName());
+    receipt.getInfo().add(DateFormat.getDateTimeInstance(DateFormat.DEFAULT, DateFormat.DEFAULT, new Locale("en", "US")).format(Date.from(Instant.now())));
+    receipt.getInfo().add("You were served by: " + employee.getName());
     receipt.getInfo().add("-".repeat(10));
     for (String productName : client.getShoppingList().getProducts().keySet()) {
       if (productNames.containsKey(productName)) {

@@ -32,4 +32,9 @@ public class Client extends Person{
   public ArrayList<Receipt> getReceipts() {
     return receipts;
   }
+
+  @Override
+  public String toString() {
+    return super.toString() + "\nAge: " + age;
+  }
 }

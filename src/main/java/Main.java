@@ -2,11 +2,11 @@ import model.*;
 import utilities.Dialogs;
 import utilities.ShopInitializer;
 
-import java.sql.Date;
 import java.text.DateFormat;
 import java.time.Instant;
 import java.time.temporal.ChronoUnit;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.Locale;
 
 public class Main {

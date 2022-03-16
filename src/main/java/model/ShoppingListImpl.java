@@ -1,6 +1,7 @@
 package model;
 
 import java.util.HashMap;
+import java.util.Map;
 
 public class ShoppingListImpl implements ShoppingList{
   private HashMap<String, Integer> products;
@@ -11,7 +12,12 @@ public class ShoppingListImpl implements ShoppingList{
 
   @Override
   public void addToList(String name, int count) {
-    products.put(name, count);
+    this.products.put(name, count);
+  }
+
+  @Override
+  public void addToList(HashMap<String, Integer> products) {
+    this.products.putAll(products);
   }
 
   @Override
@@ -19,13 +25,16 @@ public class ShoppingListImpl implements ShoppingList{
     products.remove(name);
   }
 
-  /*public void showList() {
-    for (int i = 0; i < products.size(); i++) {
-      System.out.println((i+1) + ". " + products.);
-    }
-  }*/
-
   public HashMap<String, Integer> getProducts() {
     return products;
+  }
+
+  @Override
+  public String toString() {
+    StringBuilder shoppingListInfo = new StringBuilder();
+    for (Map.Entry<String, Integer> product : products.entrySet()) {
+      shoppingListInfo.append(product.getKey()).append(", ").append(product.getValue()).append("\n");
+    }
+    return shoppingListInfo.toString();
   }
 }
