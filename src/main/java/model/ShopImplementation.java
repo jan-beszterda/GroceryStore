@@ -5,41 +5,24 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
 
-public class ShopImpl implements Shop {
+public class ShopImplementation implements Shop {
 
   private String name;
   private String address;
   private HashMap<String, Product> productNames;
   private HashMap<String, Integer> productStock;
-
-  public String getName() {
-    return name;
-  }
-
-  public String getAddress() {
-    return address;
-  }
-
-  public HashMap<String, Product> getProductNames() {
-    return productNames;
-  }
-
-  public HashMap<String, Integer> getProductStock() {
-    return productStock;
-  }
-
-  public ArrayList<Person> getEmployees() {
-    return employees;
-  }
-
   private ArrayList<Person> employees;
 
-  public ShopImpl(String name, String address) {
+  public ShopImplementation(String name, String address) {
     this.name = name;
     this.address = address;
     this.productNames = new HashMap<>();
     this.productStock = new HashMap<>();
     this.employees = new ArrayList<>();
+  }
+
+  public void start() {
+
   }
 
   @Override
@@ -132,5 +115,25 @@ public class ShopImpl implements Shop {
       }
     }
     return null;
+  }
+
+  public String getName() {
+    return name;
+  }
+
+  public String getAddress() {
+    return address;
+  }
+
+  public HashMap<String, Product> getProductNames() {
+    return productNames;
+  }
+
+  public HashMap<String, Integer> getProductStock() {
+    return productStock;
+  }
+
+  public ArrayList<Person> getEmployees() {
+    return employees;
   }
 }

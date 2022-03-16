@@ -1,4 +1,13 @@
 import model.*;
+import utilities.Dialogs;
+import utilities.ShopInitializer;
+
+import java.sql.Date;
+import java.text.DateFormat;
+import java.time.Instant;
+import java.time.temporal.ChronoUnit;
+import java.util.Calendar;
+import java.util.Locale;
 
 public class Main {
 
@@ -17,11 +26,16 @@ public class Main {
   Skapa upp ett kvitto som är baserat på om varan fanns eller inte Om kunden inte fick allting på sin inköpslista så ska det alltså inte finnas med på kvittot. Vad kan ett kvitto innehålla?*/
 
   public static void main(String[] args) {
-    Initializer shopInitializer = new Initializer();
-    ShopImpl shop = shopInitializer.initialiseShop();
+    ShopImplementation shop = ShopInitializer.initialiseShop();
+    /*System.out.println(shop.getName() + ", " + shop.getAddress());
+    System.out.println(shop.getProductNames().size());
+    shop.getProductNames().values().forEach(value -> {
+      System.out.println(value);
+    });*/
+    Dialogs.displayWelcomeMessage();
 
-    Client client = shopInitializer.initialiseClient();
+    //Client client = shopInitializer.initialiseClient();
 
-    shop.sell(client, shop.getAvailableEmployee());
+    //shop.sell(client, shop.getAvailableEmployee());
   }
 }
